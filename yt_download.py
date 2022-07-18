@@ -3,22 +3,23 @@ from pytube import YouTube
 from sys import argv
 import pprint
 
-link = argv[1]
+def yt_download(yt_url):
+    link = argv[1]
 
-yt = YouTube(link)
+    yt = YouTube(link)
 
-print(yt)
+    print(yt)
 
-print('Title:', yt.title)
+    print('Title:', yt.title)
 
-print('Author:',yt.author)
+    print('Author:',yt.author)
 
-print('View:', yt.views)
+    print('View:', yt.views)
 
-pp = pprint.PrettyPrinter(indent=4)
+    pp = pprint.PrettyPrinter(indent=4)
 
-pp.pprint({'Info': yt.vid_info})
+    pp.pprint({'Info': yt.vid_info})
 
-yd = yt.streams.get_lowest_resolution()
+    yd = yt.streams.get_lowest_resolution()
 
-yd.download('./yt_downloads')
+    yd.download('./yt_downloads')
