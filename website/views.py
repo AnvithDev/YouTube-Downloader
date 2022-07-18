@@ -1,7 +1,10 @@
-from flask import Blueprint
+from flask import Blueprint, render_template, request
 
 views = Blueprint('views', __name__)
 
-@views.route('/')
+@views.route('/', methods=['GET','POST'])
 def home():
-    return "<h1>Test</h1>"
+    if(request.method == 'POST'):
+        yt_url = request.form.get('yt_url')
+        
+    return render_template("base.html")
