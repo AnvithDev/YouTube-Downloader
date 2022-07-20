@@ -1,14 +1,14 @@
 from textwrap import indent
+from flask import send_file
 from pytube import YouTube
 from sys import argv
 import pprint
 
 def yt_download(yt_url):
-    link = argv[1]
 
-    yt = YouTube(link)
+    yt = YouTube(yt_url,allow_oauth_cache=True)
 
-    print(yt)
+    # print(yt)
 
     print('Title:', yt.title)
 
@@ -16,10 +16,13 @@ def yt_download(yt_url):
 
     print('View:', yt.views)
 
-    pp = pprint.PrettyPrinter(indent=4)
+    # pp = pprint.PrettyPrinter(indent=4)
 
-    pp.pprint({'Info': yt.vid_info})
+    # pp.pprint({'Info': yt.vid_info})
 
     yd = yt.streams.get_lowest_resolution()
 
-    yd.download('./yt_downloads')
+    path=yd.download('./yt_downloads')
+
+    fname = path.split('//')[-1]
+    return send_file(fname, as_attachment=True)
