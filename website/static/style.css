@@ -1,0 +1,44 @@
+.home-title{
+    font-size:600 px;
+    color:#fff;
+    font-weight: 600;
+    transition:0.5s;
+}
+
+.home-title:hover{
+    -webkit-text-stroke:2px red;
+    color: transparent;
+}
+.home-subtitle{
+    font-size:600 px;
+    color:#fff;
+    font-weight: 600;
+    transition:0.5s;
+}
+
+.home-subtitle:hover{
+    -webkit-text-stroke:2px red;
+    color: transparent;
+}
+
+
+.back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9){
+    .back-video{
+        width:100%;
+        height:auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .back-video{
+        width:auto;
+        height:100%;
+    }
+}
