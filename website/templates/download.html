@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<form method="POST" action="{{ url_for('yt_download') }}">
+<form method="POST" action="{{ url_for('views.yt_download') }}">
     <div class="card my-4 mx-auto" style="max-width: 1300px;">
         <div class="row no-gutters">
           <div class="col-md-4">
@@ -34,4 +34,4 @@
       </div>
 </form>
 
-{% endblock content}
+{% endblock content %}

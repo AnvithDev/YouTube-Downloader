@@ -1,16 +1,42 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="container">
-<form action="" method="POST">
+<div >
+<h1 class="home-title">Welcome to YouTube Video Downloader</h1>
+      <h3 class="home-subtitle">Want to Download videos to your local system? Then you can just enter the youtube video url here and download it to your desktop or mobile</h3>
+      
+    <!-- <section class="mt-4">
+        <form method="POST">
+      <div class="row justify-content-center">
+        <div class="col-md-6 searchbar">
+          <div class="input-group flex-nowrap form-group shadow-lg searchbar">
+            <input type="url" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="yt_url" placeholder="Eg: https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          </div>
+        </div>
+        <div class="col-md-6 searchbar">
+          <div class="input-group flex-nowrap form-group shadow-lg searchbar">
+            <button type="submit" name ="Convert" class="btn btn-primary">Convert</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    </section> -->
+
+    <form method="POST">
+        <input class="form-control mt-3" type="url" placeholder="Eg: https://www.youtube.com/watch?v=dQw4w9WgXcQ" aria-label="default input example" name="yt_url">
+        <div style="text-align:center">
+        <button type="submit" class="btn btn-danger mt-3">Convert</button></div>
+    </form>
+
+<!-- <div class="container">
+<form method="POST">
     <div class="form-group">
-          <input type="url" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="yt_url" placeholder="Eg: https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          
     </div>
-    <div class="form-group">
-        <button type="submit" name ="Convert" class="btn btn-primary">Convert</button>
-    </div>
+    
       
 </form>
+</div> -->
 </div>
 
-{% endblock content}
+{% endblock content %}
