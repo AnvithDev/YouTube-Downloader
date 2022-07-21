@@ -1,4 +1,6 @@
-from flask import Blueprint, render_template, request, session, url_for,redirect
+from io import BytesIO
+from socket import send_fds
+from flask import Blueprint, render_template, request, send_file, session, url_for,redirect
 from textwrap import indent
 from pytube import YouTube
 from sys import argv
@@ -19,3 +21,16 @@ def home():
     
     return render_template("home.html")
 
+@views.route('/download', methods=['GET','POST'])
+def yt_download():
+    if request.method=='POST':
+        buffer = BytesIO()
+        yt_url=YouTube(session['link'],allow_oauth_cache=True)
+        itag= request.form.get('itag')
+        video = yt_url.streams.get_by_itag(itag)
+        video.stream_to_buffer(buffer)
+        buffer.seek(0)
+        video_download_name = yt_url.title+".mp4"
+        return send_file(buffer, as_attachment="True", download_name=video_download_name, mimetype="video/mp4")
+    
+    return redirect(url_for('home'))
