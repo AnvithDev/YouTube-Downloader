@@ -14,7 +14,7 @@ You can visit the website through this link : <a href="https://you2be-video-down
 git clone https://github.com/AnvithDev/YouTube-Downloader.git
 ```
 
-## Installing the dependencies(Need to add this)
+## Installing the dependencies
 ```
 pip install requirements.txt
 ```
